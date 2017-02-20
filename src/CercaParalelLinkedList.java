@@ -1,20 +1,32 @@
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-
+/*
+ *
+ * Classe que realitza una cerca en paral·lel d'una llista
+ *
+ */
 public class CercaParalelLinkedList {
 
 	public List<Integer> q;
 	public AtomicInteger index;
 	
-	
+	/*
+ 	 *
+	 * Constructor
+	 *
+	 */
 	public CercaParalelLinkedList(List<Integer> q){
 		this.q = q;
 		index= new AtomicInteger();
 		index.set(-1);
 	}
 	
-	
+	/*
+ 	 *
+	 * Realitza la cerca en paral·lel
+	 *
+	 */
 	public int doCerca(final int aCercar){	
 		
 		Thread startThread = new Thread(){
@@ -33,7 +45,6 @@ public class CercaParalelLinkedList {
 	    	        	}
 	        			return;
 	        		}
-	        		//System.out.println(q.get(i));
 	        	}
 	        	
 	        }
@@ -56,7 +67,6 @@ public class CercaParalelLinkedList {
 	    	        	}
 	        			return;
 	        		}
-	        		//System.out.println(q.get(i));
 	        	}
 	        }
 	    };
@@ -68,7 +78,6 @@ public class CercaParalelLinkedList {
 			startThread.join();
 			endThread.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

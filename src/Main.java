@@ -8,10 +8,10 @@ public class Main {
 	public static void main(String [ ] args)
 	{
 		//2:
-		//System.out.println(cercaParalelaLinkedList(734, 1000));
+		System.out.println(cercaParalelaLinkedList(734, 1000));
 		
 		//3:
-		//System.out.println(cercaParallelaMultiThread(13, 7, 3));
+		System.out.println(cercaParallelaMultiThread(13, 7, 3));
 		
 		//6.1:
 		mergeSortThread();
@@ -22,6 +22,11 @@ public class Main {
 		
 	}
 	
+	/*
+ 	 *
+	 * Realitza una cerca en paral·lel 
+	 *
+	 */
 	public static int cercaParalelaLinkedList(int aCercar,int listLen){
 		List<Integer> q = Collections.synchronizedList(new LinkedList<Integer>());
 		
@@ -33,6 +38,11 @@ public class Main {
 		return cerca.doCerca(aCercar);
 	}
 	
+	/*
+ 	 *
+	 * Realitza una cerca en paral·lel multithreading
+	 *
+	 */
 	public static int cercaParallelaMultiThread(int aBuscar, int arrayLen, int numThreads){
 		
 		int[] array = new int[arrayLen];
@@ -47,6 +57,11 @@ public class Main {
 		
 	}
 	
+	/*
+ 	 *
+	 * Ordena un array utilitzan l'algoritme MergeSort multithreading
+	 *
+	 */
 	public static void mergeSortThread (){
 		int[] array = { 2, 6, 3, 5, 1, 423, 21, 142, 423,123,543,523,623,23,6223,425,2436243,524,6342,62,346,2345,2345,234,523,6234,623462346,457,3,82462 };
 		
@@ -61,20 +76,17 @@ public class Main {
 		try {
 			mergeSortThread.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		long endTime = System.nanoTime();
 		System.out.println("Took "+(endTime - startTime) + " ns"); 
-		
-		/*
-		System.out.println("INICI");
-		for (int i = 0 ; i < array.length ; i++){
-			System.out.println(array[i]);
-		}
-		System.out.println("FI");*/
 	}
 	
+	/*
+ 	 *
+	 * Ordena un array utilitzan l'algoritme MergeSort seqüencial
+	 *
+	 */
 	public static void mergeSortSquential (){
 		int[] array = { 2, 6, 3, 5, 1, 423, 21, 142, 423,123,543,523,623,23,6223,425,2436243,524,6342,62,346,2345,2345,234,523,6234,623462346,457,3,82462 };
 		
@@ -88,12 +100,5 @@ public class Main {
 		
 		long endTime = System.nanoTime();
 		System.out.println("Took "+(endTime - startTime) + " ns"); 
-		
-		
-		/*System.out.println("INICI");
-		for (int i = 0 ; i < array.length ; i++){
-			System.out.println(array[i]);
-		}
-		System.out.println("FI");*/
 	}
 }

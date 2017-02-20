@@ -1,9 +1,18 @@
-
+/*
+ *
+ * Classe que implementa l'algoritme MergeSort seqüencialment
+ *
+ */
 public class MergeSortSequential {
 	private int[] numbers;
 	private int[] helper;
 	private int number;
 
+	/*
+ 	 *
+	 * Mètode cridat desde l'exterior per ordenar
+	 *
+	 */
 	public void sort(int[] values) {
 		this.numbers = values;
 	    number = values.length;
@@ -11,6 +20,11 @@ public class MergeSortSequential {
 	    mergesort(0, number - 1);
 	}
 
+	/*
+ 	 *
+	 * Mètode que ordena recursivament
+	 *
+	 */
 	private void mergesort(int low, int high) {
 	    if (low < high) {
 	    	int middle = low + (high - low) / 2;
@@ -20,6 +34,11 @@ public class MergeSortSequential {
 	    }
 	}
 	
+	/*
+ 	 *
+	 * Mètode que organitza l'array de valors
+	 *
+	 */
 	private void merge(int low, int middle, int high) {
 
 		for (int i = low; i <= high; i++) {
