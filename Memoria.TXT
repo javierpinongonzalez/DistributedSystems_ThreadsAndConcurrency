@@ -1,0 +1,20 @@
+1:
+L'avantatge principal de la programació paral·lela és que el throughput és superior a la de programació distribuïda. Els principals desavantatges són el cost, les limitacions geogràfiques, la concurrència de dades i la manca de modularitat.
+
+2:
+Classe CercaParalelaLinkedList.
+
+3:
+Classe CercaParallelaMultiThread.
+
+4:
+Ja ho fan.
+
+5:
+La comanda run substitueix el thread actual pel que es vol executar, en canvi la comanda start crea un nou thread i és aquest el que executa la comanda run.
+
+6:
+Classes MergeSortThread i MergeSortSquential.
+
+7:
+El Seqüencial és de l'ordre de 10 vegades més ràpid que el distribuït, com ja s'ha comentat a l'apartat 1 això és normal, ja que la programació té un througput superior a la cooperativa.
